@@ -78,7 +78,7 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
     let rounds = 5;
 
-    for (i = 0; i <= rounds; i++) {
+    for (i = 1; i <= rounds; i++) {
 	console.log("-- Round " + i + " of " + rounds + " --");
 
 	user_choice = getHumanChoice();
