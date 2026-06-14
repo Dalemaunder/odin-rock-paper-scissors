@@ -11,9 +11,8 @@ let computerScore = 0;
 
 function getHumanChoice() {
     // Loop while the user input isn't valid
-    // TODO: Add case insensitivity
     do {
-	user_choice = prompt("Rock, Paper, or Scissors?: ");
+	user_choice = prompt("Rock, Paper, or Scissors?: ").toLowerCase();
     } while (user_choice != "rock" && user_choice != "paper" && user_choice != "scissors")
 
     return user_choice;
@@ -96,10 +95,9 @@ do {
     console.log(""); // Blank line for tidier console output
 
     // Loop while the user's input isn't "yes" or "no"
-    // TODO: Add case insensitivity
     // TODO: Prompt gives button options, implement the "Cancel" button
     do {
-	play_again = prompt("Would you like to play again? (yes | no): ");
+	play_again = prompt("Would you like to play again? (yes | no): ").toLowerCase();
     } while (play_again != "yes" && play_again != "no");
 
 } while (play_again === "yes");
