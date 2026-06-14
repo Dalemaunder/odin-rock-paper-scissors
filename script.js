@@ -91,7 +91,7 @@ do {
 
 
     console.log(" -- Current scores --");
-    console.log("Player: " + playerScore);
+    console.log("Player: " + humanScore);
     console.log("Computer: " + computerScore);
     console.log(""); // Blank line for tidier console output
 
