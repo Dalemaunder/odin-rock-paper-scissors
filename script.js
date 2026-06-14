@@ -1,9 +1,9 @@
 // script.js
 
 // Game logic variables
-let user_choice = "";
-let computer_choice = "";
-let play_again = "";
+let userChoice = "";
+let computerChoice = "";
+let playAgain = "";
 
 // Score tracking
 let humanScore = 0;
@@ -13,28 +13,28 @@ let computerScore = 0;
 function getHumanChoice() {
     // Loop while the user input isn't valid
     do {
-	user_choice = prompt("Rock, Paper, or Scissors?: ").toLowerCase();
-    } while (user_choice != "rock" && user_choice != "paper" && user_choice != "scissors")
+	userChoice = prompt("Rock, Paper, or Scissors?: ").toLowerCase();
+    } while (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors")
 
-    return user_choice;
+    return userChoice;
 }
 
 function getComputerChoice() {
     // Generate a number from 1 to 3 and assign the computer's choice based on it
-    let numeric_choice = Math.floor(Math.random() * 3) + 1;
-    switch (numeric_choice) {
+    let numericChoice = Math.floor(Math.random() * 3) + 1;
+    switch (numericChoice) {
 	case 1:
-	    computer_choice = "rock";
+	    computerChoice = "rock";
 	    break;
 	case 2:
-	    computer_choice = "paper";
+	    computerChoice = "paper";
 	    break;
 	case 3:
-	    computer_choice = "scissors";
+	    computerChoice = "scissors";
 	    break;
     }
 
-    return computer_choice;
+    return computerChoice;
 }
 
 
@@ -85,13 +85,13 @@ function playGame() {
     for (i = 1; i <= rounds; i++) {
 	console.log("-- Round " + i + " of " + rounds + " --");
 
-	user_choice = getHumanChoice();
-	console.log("You have chosen: " + user_choice);
+	userChoice = getHumanChoice();
+	console.log("You have chosen: " + userChoice);
 
-	computer_choice = getComputerChoice();
-	console.log("Computer has chosen: " + computer_choice);
+	computerChoice = getComputerChoice();
+	console.log("Computer has chosen: " + computerChoice);
 
-	playRound(user_choice, computer_choice);
+	playRound(userChoice, computerChoice);
 
 	console.log(" -- Current scores --");
 	console.log("Player: " + humanScore);
@@ -110,13 +110,13 @@ function playGame() {
 }
 
 
-// Continuously loop while the 'play_again' variable is "yes"
+// Continuously loop while the 'playAgain' variable is "yes"
 do {
     playGame();
 
     // Loop while the user's input isn't "yes" or "no"
     do {
-	play_again = prompt("Would you like to play again? (yes | no): ").toLowerCase();
-    } while (play_again != "yes" && play_again != "no");
+	playAgain = prompt("Would you like to play again? (yes | no): ").toLowerCase();
+    } while (playAgain != "yes" && playAgain != "no");
 
-} while (play_again === "yes");
+} while (playAgain === "yes");
