@@ -96,12 +96,12 @@ function playGame() {
     }
 
     // Output the result
-    if (playerScore === computerScore) {
-	console.log("The game is a tie at " + playerScore + "-" + computerScore + "! What're the odds?");
-    } else if (playerScore > computerScore) {
-	console.log("The player wins " + playerScore + " to "  + computerScore + ". Congratulations!");
+    if (humanScore === computerScore) {
+	console.log("The game is a tie at " + humanScore + "-" + computerScore + "! What're the odds?");
+    } else if (humanScore > computerScore) {
+	console.log("The player wins " + humanScore + " to "  + computerScore + ". Congratulations!");
     } else {
-	console.log("The computer wins " + computerScore + " to "  + playerScore + ". Better luck next time!");
+	console.log("The computer wins " + computerScore + " to "  + humanScore + ". Better luck next time!");
     }
 }
 
