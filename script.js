@@ -9,6 +9,7 @@ let play_again = "";
 let humanScore = 0;
 let computerScore = 0;
 
+
 function getHumanChoice() {
     // Loop while the user input isn't valid
     do {
@@ -36,63 +37,78 @@ function getComputerChoice() {
     return computer_choice;
 }
 
-function playRound() {
-    // Loop while the user and computer imput aren't the same
-    do {
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+	console.log("Tie!")
+    } else {
+	switch (humanChoice) {
+	    case "rock":
+		if (computerChoice === "paper") {
+		    console.log("Computer wins the round!");
+		    computerScore += 1;
+		} else {
+		    console.log("You win the round!");
+		    humanScore += 1;
+		}
+		break;
+	    case "paper":
+		if (computerChoice === "scissors") {
+		    console.log("Computer wins the round!");
+		    computerScore += 1;
+		} else {
+		    console.log("You win the round!");
+		    humanScore += 1;
+		}
+		break;
+	    case "scissors":
+		if (computerChoice === "rock") {
+		    console.log("Computer wins the round!");
+		    computerScore += 1;
+		} else {
+		    console.log("You win the round!");
+		    humanScore += 1;
+		}
+		break;
+	}
+    }
+}
+
+
+function playGame() {
+    let rounds = 5;
+
+    for (i = 0; i <= rounds; i++) {
+	console.log("-- Round " + i + " of " + rounds + " --");
+
 	user_choice = getHumanChoice();
 	console.log("You have chosen: " + user_choice);
 
 	computer_choice = getComputerChoice();
 	console.log("Computer has chosen: " + computer_choice);
 
-	if (user_choice === computer_choice) {
-	    console.log("Tie! Go again!");
-	}
+	playRound(user_choice, computer_choice);
 
-    } while (user_choice === computer_choice);
+	console.log(" -- Current scores --");
+	console.log("Player: " + humanScore);
+	console.log("Computer: " + computerScore);
+	console.log(""); // Blank line for tidier console output
+    }
 
-    // Primary game logic for when there isn't a tie
-    switch (user_choice) {
-	case "rock":
-	    if (computer_choice === "paper") {
-		console.log("Computer Wins!");
-		computerScore += 1;
-	    } else {
-		console.log("You Win!");
-		humanScore += 1;
-	    }
-	    break;
-	case "paper":
-	    if (computer_choice === "scissors") {
-		console.log("Computer Wins!");
-		computerScore += 1;
-	    } else {
-		console.log("You Win!");
-		humanScore += 1;
-	    }
-	    break;
-	case "scissors":
-	    if (computer_choice === "rock") {
-		console.log("Computer Wins!");
-		computerScore += 1;
-	    } else {
-		console.log("You Win!");
-		humanScore += 1;
-	    }
-	    break;
+    // Output the result
+    if (playerScore === computerScore) {
+	console.log("The game is a tie at " + playerScore + "-" + computerScore + "! What're the odds?");
+    } else if (playerScore > computerScore) {
+	console.log("The player wins " + playerScore + " to "  + computerScore + ". Congratulations!");
+    } else {
+	console.log("The computer wins " + computerScore + " to "  + playerScore + ". Better luck next time!");
     }
 }
 
 
 // Continuously loop while the 'play_again' variable is "yes"
 do {
-    playRound();
-
-
-    console.log(" -- Current scores --");
-    console.log("Player: " + humanScore);
-    console.log("Computer: " + computerScore);
-    console.log(""); // Blank line for tidier console output
+    playGame();
 
     // Loop while the user's input isn't "yes" or "no"
     // TODO: Prompt gives button options, implement the "Cancel" button
@@ -101,4 +117,3 @@ do {
     } while (play_again != "yes" && play_again != "no");
 
 } while (play_again === "yes");
-
