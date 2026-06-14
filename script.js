@@ -39,10 +39,12 @@ function getComputerChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
+    // Tie
     if (humanChoice === computerChoice) {
 	console.log("Tie!")
     } else {
 	switch (humanChoice) {
+	    // Paper beats rock
 	    case "rock":
 		if (computerChoice === "paper") {
 		    console.log("Computer wins the round!");
@@ -52,6 +54,7 @@ function playRound(humanChoice, computerChoice) {
 		    humanScore += 1;
 		}
 		break;
+	    // Scissors beat paper
 	    case "paper":
 		if (computerChoice === "scissors") {
 		    console.log("Computer wins the round!");
@@ -61,6 +64,7 @@ function playRound(humanChoice, computerChoice) {
 		    humanScore += 1;
 		}
 		break;
+	    // Rock beats scissors
 	    case "scissors":
 		if (computerChoice === "rock") {
 		    console.log("Computer wins the round!");
@@ -111,7 +115,6 @@ do {
     playGame();
 
     // Loop while the user's input isn't "yes" or "no"
-    // TODO: Prompt gives button options, implement the "Cancel" button
     do {
 	play_again = prompt("Would you like to play again? (yes | no): ").toLowerCase();
     } while (play_again != "yes" && play_again != "no");
