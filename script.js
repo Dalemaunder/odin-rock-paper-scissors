@@ -1,11 +1,11 @@
 // script.js
 //
 // CREATE user_choice variable
-let user_choice = ""
+let user_choice = "";
 // CREATE computer_choice
-let computer_choice = ""
+let computer_choice = "";
 // CREATE play_again
-let play_again = ""
+let play_again = "";
 
 // DO
 do {
@@ -23,13 +23,13 @@ do {
 	let numeric_choice = Math.floor(Math.random() * 3) + 1;
 	switch (numeric_choice) {
 	    case 1:
-		computer_choice = "rock"
+		computer_choice = "rock";
 		break;
 	    case 2:
-		computer_choice = "paper"
+		computer_choice = "paper";
 		break;
 	    case 3:
-		computer_choice = "scissors"
+		computer_choice = "scissors";
 		break;
 	}
 
@@ -37,11 +37,11 @@ do {
 
 //   IF user_choice and computer_choice are the same, OUTPUT "Tie, go again!"
 	if (user_choice === computer_choice) {
-	    console.log("Tie! Go again!")
+	    console.log("Tie! Go again!");
 	}
 
 //  WHILE user_choice is the same as computer_choice
-    } while (user_choice === computer_choice)
+    } while (user_choice === computer_choice);
 //
 //  CASE user_choice:
 //  "rock":
@@ -52,13 +52,13 @@ do {
 //   IF computer_choice is "rock", OUTPUT "Computer Wins!" ELSE OUTPUT "You Win!"
     switch (user_choice) {
 	case "rock":
-	    (computer_choice === "paper") ? console.log("Computer Wins!") : console.log("You Win!")
+	    (computer_choice === "paper") ? console.log("Computer Wins!") : console.log("You Win!");
 	    break;
 	case "paper":
-	    (computer_choice === "scissors") ? console.log("Computer Wins!") : console.log("You Win!")
+	    (computer_choice === "scissors") ? console.log("Computer Wins!") : console.log("You Win!");
 	    break;
 	case "scissors":
-	    (computer_choice === "rock") ? console.log("Computer Wins!") : console.log("You Win!")
+	    (computer_choice === "rock") ? console.log("Computer Wins!") : console.log("You Win!");
 	    break;
     }
 //
