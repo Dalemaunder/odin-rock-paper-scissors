@@ -5,32 +5,43 @@ let user_choice = "";
 let computer_choice = "";
 let play_again = "";
 
+function getHumanChoice() {
+    // Loop while the user input isn't valid
+    // TODO: Add case insensitivity
+    do {
+	user_choice = prompt("Rock, Paper, or Scissors?: ");
+    } while (user_choice != "rock" && user_choice != "paper" && user_choice != "scissors")
+
+    return user_choice;
+}
+
+function getComputerChoice() {
+    // Generate a number from 1 to 3 and assign the computer's choice based on it
+    let numeric_choice = Math.floor(Math.random() * 3) + 1;
+    switch (numeric_choice) {
+	case 1:
+	    computer_choice = "rock";
+	    break;
+	case 2:
+	    computer_choice = "paper";
+	    break;
+	case 3:
+	    computer_choice = "scissors";
+	    break;
+    }
+
+    return computer_choice;
+}
+
+
 // Continuously loop while the 'play_again' variable is "yes"
 do {
     // Loop while the user and computer imput aren't the same
     do {
-	// Loop while the user input isn't valid
-	// TODO: Add case insensitivity
-	do {
-	    user_choice = prompt("Rock, Paper, or Scissors?: ");
-	} while (user_choice != "rock" && user_choice != "paper" && user_choice != "scissors")
-
+	user_choice = getHumanChoice();
 	console.log("You have chosen: " + user_choice);
 
-	// Generate a number from 1 to 3 and assign the computer's choice based on it
-	let numeric_choice = Math.floor(Math.random() * 3) + 1;
-	switch (numeric_choice) {
-	    case 1:
-		computer_choice = "rock";
-		break;
-	    case 2:
-		computer_choice = "paper";
-		break;
-	    case 3:
-		computer_choice = "scissors";
-		break;
-	}
-
+	computer_choice = getComputerChoice();
 	console.log("Computer has chosen: " + computer_choice);
 
 	if (user_choice === computer_choice) {
