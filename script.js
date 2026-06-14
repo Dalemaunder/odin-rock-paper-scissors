@@ -1,25 +1,23 @@
 // script.js
-//
-// CREATE user_choice variable
+
+// Game logic variables
 let user_choice = "";
-// CREATE computer_choice
 let computer_choice = "";
-// CREATE play_again
 let play_again = "";
 
-// DO
+// Continuously loop while the 'play_again' variable is "yes"
 do {
-//  DO
+    // Loop while the user and computer imput aren't the same
     do {
-//   PROMPT the user for their move and STORE it in user_choice
-//   CONFIRM that the user's input is either "rock", "paper", or "scissors", case insensitive
+	// Loop while the user input isn't valid
+	// TODO: Add case insensitivity
 	do {
 	    user_choice = prompt("Rock, Paper, or Scissors?: ");
 	} while (user_choice != "rock" && user_choice != "paper" && user_choice != "scissors")
 
 	console.log("You have chosen: " + user_choice);
 
-//   GENERATE the computer's move and STORE it in computer_choice
+	// Generate a number from 1 to 3 and assign the computer's choice based on it
 	let numeric_choice = Math.floor(Math.random() * 3) + 1;
 	switch (numeric_choice) {
 	    case 1:
@@ -35,21 +33,13 @@ do {
 
 	console.log("Computer has chosen: " + computer_choice);
 
-//   IF user_choice and computer_choice are the same, OUTPUT "Tie, go again!"
 	if (user_choice === computer_choice) {
 	    console.log("Tie! Go again!");
 	}
 
-//  WHILE user_choice is the same as computer_choice
     } while (user_choice === computer_choice);
-//
-//  CASE user_choice:
-//  "rock":
-//   IF computer_choice is "paper", OUTPUT "Computer Wins!" ELSE OUTPUT "You Win!"
-//  "paper":
-//   IF computer_choice is "scissors", OUTPUT "Computer Wins!" ELSE OUTPUT "You Win!"
-//  "scissors":
-//   IF computer_choice is "rock", OUTPUT "Computer Wins!" ELSE OUTPUT "You Win!"
+
+    // Primary game logic for when there isn't a tie
     switch (user_choice) {
 	case "rock":
 	    (computer_choice === "paper") ? console.log("Computer Wins!") : console.log("You Win!");
@@ -61,14 +51,13 @@ do {
 	    (computer_choice === "rock") ? console.log("Computer Wins!") : console.log("You Win!");
 	    break;
     }
-//
-//  
-//  PROMPT the user if they'd like to play again and STORE it in play_again
+
+    // Loop while the user's input isn't "yes" or "no"
+    // TODO: Add case insensitivity
+    // TODO: Prompt gives button options, implement the "Cancel" button
     do {
 	play_again = prompt("Would you like to play again? (yes | no): ");
     } while (play_again != "yes" && play_again != "no");
-//  CONFIRM that the user's choice is either "yes" or "no"
 
-// WHILE play_again is "yes"
 } while (play_again === "yes");
 
