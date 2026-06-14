@@ -17,6 +17,8 @@ do {
 	    user_choice = prompt("Rock, Paper, or Scissors?: ");
 	} while (user_choice != "rock" && user_choice != "paper" && user_choice != "scissors")
 
+	console.log("You have chosen: " + user_choice);
+
 //   GENERATE the computer's move and STORE it in computer_choice
 	let numeric_choice = Math.floor(Math.random() * 3) + 1;
 	switch (numeric_choice) {
@@ -30,6 +32,8 @@ do {
 		computer_choice = "scissors"
 		break;
 	}
+
+	console.log("Computer has chosen: " + computer_choice);
 
 //   IF user_choice and computer_choice are the same, OUTPUT "Tie, go again!"
 	if (user_choice === computer_choice) {
