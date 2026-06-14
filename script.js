@@ -89,6 +89,12 @@ function playRound() {
 do {
     playRound();
 
+
+    console.log(" -- Current scores --");
+    console.log("Player: " + playerScore);
+    console.log("Computer: " + computerScore);
+    console.log(""); // Blank line for tidier console output
+
     // Loop while the user's input isn't "yes" or "no"
     // TODO: Add case insensitivity
     // TODO: Prompt gives button options, implement the "Cancel" button
