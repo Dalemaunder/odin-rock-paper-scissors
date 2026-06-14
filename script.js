@@ -37,9 +37,7 @@ function getComputerChoice() {
     return computer_choice;
 }
 
-
-// Continuously loop while the 'play_again' variable is "yes"
-do {
+function playRound() {
     // Loop while the user and computer imput aren't the same
     do {
 	user_choice = getHumanChoice();
@@ -84,6 +82,12 @@ do {
 	    }
 	    break;
     }
+}
+
+
+// Continuously loop while the 'play_again' variable is "yes"
+do {
+    playRound();
 
     // Loop while the user's input isn't "yes" or "no"
     // TODO: Add case insensitivity
