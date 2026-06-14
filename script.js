@@ -1,7 +1,7 @@
 // script.js
 
 // Game logic variables
-let userChoice = "";
+let humanChoice = "";
 let computerChoice = "";
 let playAgain = "";
 
@@ -13,10 +13,10 @@ let computerScore = 0;
 function getHumanChoice() {
     // Loop while the user input isn't valid
     do {
-	userChoice = prompt("Rock, Paper, or Scissors?: ").toLowerCase();
-    } while (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors")
+	humanChoice = prompt("Rock, Paper, or Scissors?: ").toLowerCase();
+    } while (humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors")
 
-    return userChoice;
+    return humanChoice;
 }
 
 function getComputerChoice() {
@@ -85,13 +85,13 @@ function playGame() {
     for (i = 1; i <= rounds; i++) {
 	console.log("-- Round " + i + " of " + rounds + " --");
 
-	userChoice = getHumanChoice();
-	console.log("You have chosen: " + userChoice);
+	humanChoice = getHumanChoice();
+	console.log("You have chosen: " + humanChoice);
 
 	computerChoice = getComputerChoice();
 	console.log("Computer has chosen: " + computerChoice);
 
-	playRound(userChoice, computerChoice);
+	playRound(humanChoice, computerChoice);
 
 	console.log(" -- Current scores --");
 	console.log("Player: " + humanScore);
