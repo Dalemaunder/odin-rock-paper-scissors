@@ -5,6 +5,10 @@ let user_choice = "";
 let computer_choice = "";
 let play_again = "";
 
+// Score tracking
+let humanScore = 0;
+let computerScore = 0;
+
 function getHumanChoice() {
     // Loop while the user input isn't valid
     // TODO: Add case insensitivity
@@ -53,13 +57,31 @@ do {
     // Primary game logic for when there isn't a tie
     switch (user_choice) {
 	case "rock":
-	    (computer_choice === "paper") ? console.log("Computer Wins!") : console.log("You Win!");
+	    if (computer_choice === "paper") {
+		console.log("Computer Wins!");
+		computerScore += 1;
+	    } else {
+		console.log("You Win!");
+		humanScore += 1;
+	    }
 	    break;
 	case "paper":
-	    (computer_choice === "scissors") ? console.log("Computer Wins!") : console.log("You Win!");
+	    if (computer_choice === "scissors") {
+		console.log("Computer Wins!");
+		computerScore += 1;
+	    } else {
+		console.log("You Win!");
+		humanScore += 1;
+	    }
 	    break;
 	case "scissors":
-	    (computer_choice === "rock") ? console.log("Computer Wins!") : console.log("You Win!");
+	    if (computer_choice === "rock") {
+		console.log("Computer Wins!");
+		computerScore += 1;
+	    } else {
+		console.log("You Win!");
+		humanScore += 1;
+	    }
 	    break;
     }
 
